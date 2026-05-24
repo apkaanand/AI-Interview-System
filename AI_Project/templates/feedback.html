@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>AI Feedback</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="interview-container">
+
+    <div class="interview-box">
+
+        <!-- TOP -->
+
+        <div class="interview-top">
+
+            <div>
+
+                <h1>
+
+                    AI FEEDBACK
+
+                </h1>
+
+                <p>
+
+                    AI based interview performance analysis.
+
+                </p>
+
+            </div>
+
+            <div class="hr-badge">
+
+                RESULT
+
+            </div>
+
+        </div>
+
+        <!-- RESULT CARD -->
+
+        <div class="feedback-card">
+
+            <div class="feedback-icon">
+
+                <i class="fa-solid fa-award"></i>
+
+            </div>
+
+            <h2>
+
+                {{ result }}
+
+            </h2>
+
+            <p>
+
+                Your AI HR interview performance
+                has been analyzed successfully.
+
+            </p>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <a href="/dashboard">
+
+            <button>
+
+                BACK TO DASHBOARD
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

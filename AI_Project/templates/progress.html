@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Progress</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="main-full">
+
+    <!-- TOP -->
+
+    <div class="progress-top">
+
+        <div>
+
+            <h1 class="progress-heading">
+
+                YOUR PROGRESS
+
+            </h1>
+
+            <p class="progress-subtitle">
+
+                Smart AI based interview analytics dashboard.
+
+            </p>
+
+        </div>
+
+        <a href="/dashboard">
+
+            <button class="logout-btn">
+
+                BACK
+
+            </button>
+
+        </a>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="grid">
+
+        <!-- MCQ -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <h2>
+
+                MCQ SCORE
+
+            </h2>
+
+            <p>
+
+                {{ score }}/10
+
+            </p>
+
+        </div>
+
+        <!-- AI -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-robot"></i>
+
+            </div>
+
+            <h2>
+
+                AI HR STATUS
+
+            </h2>
+
+            <p>
+
+                COMPLETED
+
+            </p>
+
+        </div>
+
+        <!-- STATUS -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-award"></i>
+
+            </div>
+
+            <h2>
+
+                PERFORMANCE
+
+            </h2>
+
+            <p>
+
+                EXCELLENT
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

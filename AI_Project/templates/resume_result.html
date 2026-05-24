@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>AI Resume Analysis</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="main-full">
+
+    <!-- TOP -->
+
+    <div class="progress-top">
+
+        <div>
+
+            <h1 class="progress-heading">
+
+                AI RESUME ANALYSIS
+
+            </h1>
+
+            <p class="progress-subtitle">
+
+                Smart AI based resume evaluation dashboard.
+
+            </p>
+
+        </div>
+
+        <a href="/dashboard">
+
+            <button class="logout-btn">
+
+                BACK
+
+            </button>
+
+        </a>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="grid">
+
+        <!-- SCORE -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <h2>
+
+                RESUME SCORE
+
+            </h2>
+
+            <p>
+
+                {{ score }}/10
+
+            </p>
+
+        </div>
+
+        <!-- SKILLS -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-code"></i>
+
+            </div>
+
+            <h2>
+
+                DETECTED SKILLS
+
+            </h2>
+
+            {% for skill in skills %}
+
+                <p>
+
+                    {{ skill }}
+
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- FEEDBACK -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-robot"></i>
+
+            </div>
+
+            <h2>
+
+                AI FEEDBACK
+
+            </h2>
+
+            <p>
+
+                {{ feedback }}
+
+            </p>
+
+        </div>
+
+        <!-- HIRING -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+            </div>
+
+            <h2>
+
+                HIRING CHANCE
+
+            </h2>
+
+            <p>
+
+                {{ chance }}
+
+            </p>
+
+        </div>
+
+        <!-- WEAKNESSES -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+            </div>
+
+            <h2>
+
+                WEAKNESSES
+
+            </h2>
+
+            {% for weak in weaknesses %}
+
+                <p>
+
+                    {{ weak }}
+
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

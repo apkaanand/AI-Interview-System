@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Register</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="auth-page">
+
+    <!-- LEFT -->
+
+    <div class="auth-left">
+
+        <div class="auth-content">
+
+            <h1>
+
+                CREATE
+                ACCOUNT
+
+            </h1>
+
+            <p>
+
+                Join futuristic AI interview platform
+                and start your smart interview journey.
+
+            </p>
+
+            <div class="feature-list">
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                    <span>
+
+                        AI HR Interview
+
+                    </span>
+
+                </div>
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-clipboard-question"></i>
+
+                    <span>
+
+                        Technical MCQ Round
+
+                    </span>
+
+                </div>
+
+                <div class="feature">
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                    <span>
+
+                        Smart Progress Tracking
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="auth-right">
+
+        <div class="auth-box">
+
+            <div class="login-top">
+
+                <h2>
+
+                    REGISTER NOW
+
+                </h2>
+
+                <p>
+
+                    Create your AI Interview account.
+
+                </p>
+
+            </div>
+
+            <form method="POST">
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                    type="text"
+                    name="username"
+                    placeholder="Create Username"
+                    required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                    type="password"
+                    name="password"
+                    placeholder="Create Password"
+                    required>
+
+                </div>
+
+                <button type="submit">
+
+                    CREATE ACCOUNT
+
+                </button>
+
+            </form>
+
+            <div class="bottom-link">
+
+                <a href="/login">
+
+                    ALREADY HAVE ACCOUNT?
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Resume Analyzer</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="interview-container">
+
+    <div class="interview-box">
+
+        <!-- TOP -->
+
+        <div class="interview-top">
+
+            <div>
+
+                <h1>
+
+                    AI RESUME ANALYZER
+
+                </h1>
+
+                <p>
+
+                    Upload your resume and get smart AI analysis.
+
+                </p>
+
+            </div>
+
+            <div class="hr-badge">
+
+                AI SCAN
+
+            </div>
+
+        </div>
+
+        <!-- UPLOAD CARD -->
+
+        <div class="upload-card">
+
+            <div class="upload-icon">
+
+                <i class="fa-solid fa-file-arrow-up"></i>
+
+            </div>
+
+            <h2>
+
+                Upload Resume
+
+            </h2>
+
+            <p>
+
+                Supported formats:
+                PDF, DOCX
+
+            </p>
+
+            <form
+            method="POST"
+            enctype="multipart/form-data">
+
+                <input
+                type="file"
+                name="resume"
+                required>
+
+                <button type="submit">
+
+                    ANALYZE RESUME
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Interview Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="interview-container">
+
+    <div class="interview-box">
+
+        <!-- TOP -->
+
+        <div class="interview-top">
+
+            <div>
+
+                <h1>
+
+                    INTERVIEW RESULT
+
+                </h1>
+
+                <p>
+
+                    Smart AI based interview evaluation.
+
+                </p>
+
+            </div>
+
+            <div class="hr-badge">
+
+                RESULT
+
+            </div>
+
+        </div>
+
+        <!-- RESULT CARD -->
+
+        <div class="feedback-card">
+
+            <div class="feedback-icon">
+
+                <i class="fa-solid fa-trophy"></i>
+
+            </div>
+
+            <h2>
+
+                YOUR SCORE:
+                {{ score }}
+
+            </h2>
+
+            <p>
+
+                Total Questions:
+                {{ total }}
+
+            </p>
+
+            <div class="result-status">
+
+                PERFORMANCE: EXCELLENT
+
+            </div>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <a href="/dashboard">
+
+            <button>
+
+                BACK TO DASHBOARD
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

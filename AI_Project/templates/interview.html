@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>MCQ Interview</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="interview-container">
+
+    <div class="interview-box">
+
+        <!-- TOP -->
+
+        <div class="interview-top">
+
+            <div>
+
+                <h1>
+
+                    MCQ INTERVIEW
+
+                </h1>
+
+                <p>
+
+                    Technical multiple choice interview round.
+
+                </p>
+
+            </div>
+
+            <div class="hr-badge">
+
+                TECH ROUND
+
+            </div>
+
+        </div>
+
+        <!-- QUESTION -->
+
+        <div class="question-card">
+
+            <div class="question-icon">
+
+                <i class="fa-solid fa-clipboard-question"></i>
+
+            </div>
+
+            <h2>
+
+                {{ question['question'] }}
+
+            </h2>
+
+        </div>
+
+        <!-- FORM -->
+
+        <form method="POST">
+
+            {% for option in question['options'] %}
+
+            <label class="option-box">
+
+                <input
+                type="radio"
+                name="answer"
+                value="{{ option }}"
+                required>
+
+                <span>
+
+                    {{ option }}
+
+                </span>
+
+            </label>
+
+            {% endfor %}
+
+            <button type="submit">
+
+                NEXT QUESTION
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

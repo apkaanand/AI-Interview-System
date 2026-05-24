@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>AI HR Interview</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="interview-container">
+
+    <div class="interview-box">
+
+        <!-- TOP -->
+
+        <div class="interview-top">
+
+            <div>
+
+                <h1>
+
+                    AI HR INTERVIEW
+
+                </h1>
+
+                <p>
+
+                    Smart AI based HR interaction system.
+
+                </p>
+
+            </div>
+
+            <div class="hr-badge">
+
+                AI POWERED
+
+            </div>
+
+        </div>
+
+        <!-- QUESTION -->
+
+        <div class="question-card">
+
+            <div class="question-icon">
+
+                <i class="fa-solid fa-robot"></i>
+
+            </div>
+
+            <h2>
+
+                {{ question }}
+
+            </h2>
+
+        </div>
+
+        <!-- FORM -->
+
+        <form method="POST">
+
+            <textarea
+            name="answer"
+            placeholder="Write your professional answer here..."
+            required></textarea>
+
+            <button type="submit">
+
+                NEXT QUESTION
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

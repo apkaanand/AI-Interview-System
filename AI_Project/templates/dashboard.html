@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- GLOW -->
+
+<div class="glow"></div>
+<div class="glow2"></div>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <div>
+
+        <div class="logo">
+
+            <h2>AI INTERVIEW</h2>
+
+            <p>PLATFORM</p>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+
+                <i class="fa-solid fa-house"></i>
+
+                Dashboard
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-clipboard-question"></i>
+
+                MCQ Interview
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-robot"></i>
+
+                AI HR Interview
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Resume Analyzer
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-video"></i>
+
+                Video Interview
+
+            </li>
+
+            <li>
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Admin Panel
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+        <div>
+
+            <h1>
+
+                DASHBOARD
+
+            </h1>
+
+            <p>
+
+                Welcome back,
+                {{ user }}!
+                Choose an option to continue.
+
+            </p>
+
+        </div>
+
+        <div class="profile-box">
+
+            <i class="fa-solid fa-user"></i>
+
+            <span>
+
+                {{ user }}
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="grid">
+
+        <!-- MCQ -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-clipboard-check"></i>
+
+            </div>
+
+            <h2>
+
+                INTERVIEW
+                (MCQ BASED)
+
+            </h2>
+
+            <p>
+
+                Technical multiple choice interview round.
+
+            </p>
+
+            <a href="/interview">
+
+                <button>
+
+                    START MCQ INTERVIEW
+
+                </button>
+
+            </a>
+
+        </div>
+
+        <!-- AI HR -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-comments"></i>
+
+            </div>
+
+            <h2>
+
+                AI HR
+                INTERVIEW
+
+            </h2>
+
+            <p>
+
+                Real HR style interview with AI feedback.
+
+            </p>
+
+            <a href="/ai">
+
+                <button>
+
+                    START AI INTERVIEW
+
+                </button>
+
+            </a>
+
+        </div>
+
+        <!-- RESUME -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-file-arrow-up"></i>
+
+            </div>
+
+            <h2>
+
+                AI RESUME
+                ANALYZER
+
+            </h2>
+
+            <p>
+
+                Upload your resume and get AI analysis.
+
+            </p>
+
+            <a href="/resume">
+
+                <button>
+
+                    OPEN ANALYZER
+
+                </button>
+
+            </a>
+
+        </div>
+
+        <!-- VIDEO -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-video"></i>
+
+            </div>
+
+            <h2>
+
+                VIDEO
+                INTERVIEW
+
+            </h2>
+
+            <p>
+
+                Webcam interview simulation platform.
+
+            </p>
+
+            <a href="/video">
+
+                <button>
+
+                    OPEN VIDEO INTERVIEW
+
+                </button>
+
+            </a>
+
+        </div>
+
+        <!-- ADMIN -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+            <h2>
+
+                ADMIN
+                PANEL
+
+            </h2>
+
+            <p>
+
+                Secure admin management dashboard.
+
+            </p>
+
+            <a href="/admin">
+
+                <button>
+
+                    OPEN PANEL
+
+                </button>
+
+            </a>
+
+        </div>
+
+        <!-- PROGRESS -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-chart-simple"></i>
+
+            </div>
+
+            <h2>
+
+                YOUR
+                PROGRESS
+
+            </h2>
+
+            <p>
+
+                View your interview history and scores.
+
+            </p>
+
+            <a href="/progress">
+
+                <button>
+
+                    VIEW PROGRESS
+
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

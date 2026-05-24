@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Admin Panel</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="glow"></div>
+<div class="glow2"></div>
+
+<div class="main-full">
+
+    <!-- TOP -->
+
+    <div class="topbar">
+
+        <div>
+
+            <h1>
+
+                ADMIN PANEL
+
+            </h1>
+
+            <p>
+
+                Secure management dashboard.
+
+            </p>
+
+        </div>
+
+        <div class="profile-box">
+
+            <i class="fa-solid fa-user-shield"></i>
+
+            <span>
+
+                ADMIN
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- GRID -->
+
+    <div class="grid">
+
+        <!-- USERS -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+            <h2>
+
+                REGISTERED USERS
+
+            </h2>
+
+            {% for user in users %}
+
+                <p>
+
+                    {{ user }}
+
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- SECURITY -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+            <h2>
+
+                SECURITY STATUS
+
+            </h2>
+
+            <p>
+
+                All user data protected securely.
+
+            </p>
+
+        </div>
+
+        <!-- SYSTEM -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-server"></i>
+
+            </div>
+
+            <h2>
+
+                SERVER STATUS
+
+            </h2>
+
+            <p>
+
+                AI Interview System Running Successfully.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <a href="/dashboard">
+
+        <button>
+
+            BACK TO DASHBOARD
+
+        </button>
+
+    </a>
+
+</div>
+
+</body>
+
+</html>
