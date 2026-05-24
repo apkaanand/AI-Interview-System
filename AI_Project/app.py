@@ -583,12 +583,21 @@ def admin():
         'admin.html'
     )
 # ================= ADMIN LOGOUT =================
+@app.route('/')
+
+def home():
+
+    return render_template(
+        'index.html'
+    )
+
+
 
 @app.route('/admin_logout')
+
 def admin_logout():
 
     return redirect('/')
-
 # ================= LOGOUT =================
 
 @app.route('/logout')
