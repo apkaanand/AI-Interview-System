@@ -1,6 +1,11 @@
 console.log("AI INTERVIEW SYSTEM INITIALIZED");
 
-/* ================= CARD HOVER ================= */
+/* ================= PAGE FADE ================= */
+
+document.body.style.opacity = "0";
+document.body.style.transition = "0.6s";
+
+/* ================= CARD HOVER EFFECT ================= */
 
 document.addEventListener(
 
@@ -9,7 +14,11 @@ document.addEventListener(
     () => {
 
         const cards =
-        document.querySelectorAll(".card");
+        document.querySelectorAll(
+
+            ".card"
+
+        );
 
         cards.forEach((card) => {
 
@@ -80,7 +89,7 @@ document.addEventListener(
 
 );
 
-/* ================= BUTTON EFFECT ================= */
+/* ================= BUTTON GLOW EFFECT ================= */
 
 const buttons =
 document.querySelectorAll("button");
@@ -97,6 +106,10 @@ buttons.forEach((btn) => {
 
             "0 0 25px rgba(37,99,235,0.5)";
 
+            btn.style.transform =
+
+            "scale(1.05)";
+
         }
 
     );
@@ -110,6 +123,10 @@ buttons.forEach((btn) => {
             btn.style.boxShadow =
 
             "none";
+
+            btn.style.transform =
+
+            "scale(1)";
 
         }
 
@@ -130,3 +147,155 @@ window.addEventListener(
     }
 
 );
+
+/* ================= TYPING EFFECT ================= */
+
+const headings =
+document.querySelectorAll(
+
+    "h1"
+);
+
+headings.forEach((heading) => {
+
+    heading.style.animation =
+
+    "fadeIn 1.2s ease";
+
+});
+
+/* ================= VIDEO INTERVIEW ================= */
+
+const questions = [
+
+    "Tell me about yourself",
+
+    "What are your strengths?",
+
+    "Why should we hire you?",
+
+    "Explain your project",
+
+    "What is Machine Learning?",
+
+    "What are your career goals?",
+
+    "What are your weaknesses?",
+
+    "Why do you want this job?"
+
+];
+
+let questionIndex = 0;
+
+let questionTimer;
+
+async function startCamera(){
+
+    try{
+
+        const stream =
+
+        await navigator.mediaDevices.getUserMedia({
+
+            video:true,
+            audio:false
+
+        });
+
+        const video =
+        document.getElementById(
+
+            "video"
+        );
+
+        if(video){
+
+            video.srcObject = stream;
+
+        }
+
+        askQuestion();
+
+        questionTimer =
+
+        setInterval(
+
+            askQuestion,
+
+            60000
+
+        );
+
+    }
+
+    catch(error){
+
+        alert(
+
+            "Please Allow Camera Permission"
+
+        );
+
+        console.log(error);
+
+    }
+
+}
+
+function askQuestion(){
+
+    const questionText =
+    document.getElementById(
+
+        "question"
+    );
+
+    if(questionText){
+
+        questionText.innerHTML =
+
+        questions[questionIndex];
+
+        questionIndex++;
+
+        if(
+
+            questionIndex >=
+            questions.length
+
+        ){
+
+            questionIndex = 0;
+
+        }
+
+    }
+
+}
+
+function skipQuestion(){
+
+    askQuestion();
+
+}
+
+function showFeedback(){
+
+    clearInterval(questionTimer);
+
+    const feedback =
+    document.getElementById(
+
+        "feedback"
+    );
+
+    if(feedback){
+
+        feedback.style.display =
+
+        "block";
+
+    }
+
+}
