@@ -12,9 +12,15 @@ DB_FILE = "users.json"
 
 if os.path.exists(DB_FILE):
 
-    with open(DB_FILE, "r") as file:
+    try:
 
-        users = json.load(file)
+        with open(DB_FILE, "r") as file:
+
+            users = json.load(file)
+
+    except:
+
+        users = {}
 
 else:
 
@@ -135,17 +141,6 @@ questions = [
     },
 
     {
-        "question":"Which is used for styling?",
-        "options":[
-            "CSS",
-            "Python",
-            "Flask",
-            "AI"
-        ],
-        "answer":"CSS"
-    },
-
-    {
         "question":"JavaScript runs in?",
         "options":[
             "Browser",
@@ -165,28 +160,6 @@ questions = [
             "Driving"
         ],
         "answer":"Deep Learning"
-    },
-
-    {
-        "question":"Which is backend framework?",
-        "options":[
-            "Flask",
-            "Photoshop",
-            "Canva",
-            "CapCut"
-        ],
-        "answer":"Flask"
-    },
-
-    {
-        "question":"Which symbol is used for comments in Python?",
-        "options":[
-            "#",
-            "@",
-            "$",
-            "&"
-        ],
-        "answer":"#"
     },
 
     {
@@ -220,28 +193,6 @@ questions = [
             "PHP"
         ],
         "answer":"Python"
-    },
-
-    {
-        "question":"Which is cloud platform?",
-        "options":[
-            "AWS",
-            "Instagram",
-            "WhatsApp",
-            "Spotify"
-        ],
-        "answer":"AWS"
-    },
-
-    {
-        "question":"Which one is database?",
-        "options":[
-            "MongoDB",
-            "Canva",
-            "YouTube",
-            "Chrome"
-        ],
-        "answer":"MongoDB"
     }
 
 ]
@@ -258,34 +209,30 @@ ai_questions = [
 
     "What are your weaknesses?",
 
-    "Where do you see yourself in 5 years?",
-
-    "Why do you want this job?",
-
-    "Describe a challenge you faced.",
-
-    "What is teamwork for you?",
-
-    "How do you handle pressure?",
-
-    "Why are you interested in AI?"
+    "Where do you see yourself in 5 years?"
 
 ]
 
 # ================= HOME =================
 
 @app.route('/')
+
 def home():
 
     return render_template(
+
         'index.html'
+
     )
 
 # ================= REGISTER =================
 
 @app.route(
+
     '/register',
+
     methods=['GET','POST']
+
 )
 
 def register():
@@ -298,21 +245,35 @@ def register():
 
         users[username] = password
 
-        with open(DB_FILE, "w") as file:
+        with open(
+
+            DB_FILE,
+            "w"
+
+        ) as file:
 
             json.dump(users, file)
 
-        return redirect('/login')
+        return redirect(
+
+            '/login'
+
+        )
 
     return render_template(
+
         'register.html'
+
     )
 
 # ================= LOGIN =================
 
 @app.route(
+
     '/login',
+
     methods=['GET','POST']
+
 )
 
 def login():
@@ -335,20 +296,31 @@ def login():
 
             session['user'] = username
 
-            return redirect('/dashboard')
+            return redirect(
+
+                '/dashboard'
+
+            )
 
     return render_template(
+
         'login.html'
+
     )
 
 # ================= DASHBOARD =================
 
 @app.route('/dashboard')
+
 def dashboard():
 
     if 'user' not in session:
 
-        return redirect('/login')
+        return redirect(
+
+            '/login'
+
+        )
 
     return render_template(
 
@@ -358,11 +330,14 @@ def dashboard():
 
     )
 
-# ================= MCQ INTERVIEW =================
+# ================= MCQ =================
 
 @app.route(
+
     '/interview',
+
     methods=['GET','POST']
+
 )
 
 def interview():
@@ -386,7 +361,11 @@ def interview():
 
         session['index'] += 1
 
-        index = session['index']
+        return redirect(
+
+            '/interview'
+
+        )
 
     if index >= len(questions):
 
@@ -395,7 +374,6 @@ def interview():
         total = len(questions)
 
         session.pop('index')
-        session.pop('score')
 
         return render_template(
 
@@ -417,8 +395,11 @@ def interview():
 # ================= AI HR =================
 
 @app.route(
+
     '/ai',
+
     methods=['GET','POST']
+
 )
 
 def ai():
@@ -433,7 +414,7 @@ def ai():
 
         session['ai_index'] += 1
 
-        index = session['ai_index']
+        return redirect('/ai')
 
     if index >= len(ai_questions):
 
@@ -462,33 +443,26 @@ def ai():
 
     )
 
-# ================= PROGRESS =================
-
-@app.route('/progress')
-def progress():
-
-    return render_template(
-
-        'progress.html',
-
-        score=18
-
-    )
-
 # ================= VIDEO =================
 
 @app.route('/video')
+
 def video():
 
     return render_template(
+
         'video.html'
+
     )
 
 # ================= RESUME =================
 
 @app.route(
+
     '/resume',
+
     methods=['GET','POST']
+
 )
 
 def resume():
@@ -502,8 +476,7 @@ def resume():
             "Python",
             "Flask",
             "HTML",
-            "CSS",
-            "AI/ML"
+            "CSS"
 
         ]
 
@@ -514,50 +487,73 @@ def resume():
 
         """
 
-        chance = "HIGH"
-
-        weaknesses = [
-
-            "Improve communication",
-
-            "Add more projects"
-
-        ]
-
         return render_template(
 
             'resume_result.html',
 
             score=score,
             skills=skills,
-            feedback=feedback,
-            chance=chance,
-            weaknesses=weaknesses
+            feedback=feedback
 
         )
 
     return render_template(
+
         'resume.html'
+
+    )
+
+# ================= PROGRESS =================
+
+@app.route('/progress')
+
+def progress():
+
+    score = session.get(
+
+        'score',
+        0
+
+    )
+
+    return render_template(
+
+        'progress.html',
+
+        score=score
+
+    )
+
+# ================= CERTIFICATE =================
+
+@app.route('/certificate')
+
+def certificate():
+
+    return render_template(
+
+        'certificate.html',
+
+        user=session.get(
+
+            'user',
+            'Student'
+
+        )
+
     )
 
 # ================= ADMIN =================
 
 @app.route(
-    '/admin',
-    methods=['GET','POST']
-)
 
-# ================= ADMIN =================
-# ================= ADMIN =================
-
-@app.route(
     '/admin',
+
     methods=['GET','POST']
+
 )
 
 def admin():
-
-    total_users = len(users)
 
     if request.method == 'POST':
 
@@ -565,24 +561,41 @@ def admin():
 
         password = request.form['password']
 
-        if username == "Anand" and password == "Alexa":
+        if (
+
+            username == "Anand"
+
+            and
+
+            password == "Alexa"
+
+        ):
 
             session['admin'] = True
 
-            return render_template(
+            return redirect(
 
-                'admin.html',
-
-                total_users=total_users,
-                users=users
+                '/adminpanel'
 
             )
 
+    return render_template(
+
+        'login.html'
+
+    )
+
+# ================= ADMIN PANEL =================
+
+@app.route('/adminpanel')
+
+def adminpanel():
+
     if 'admin' not in session:
 
-        return render_template(
+        return redirect(
 
-            'admin_login.html'
+            '/admin'
 
         )
 
@@ -590,18 +603,27 @@ def admin():
 
         'admin.html',
 
-        total_users=total_users,
+        total_users=len(users),
+
         users=users
 
     )
+
 # ================= ADMIN LOGOUT =================
+
 @app.route('/admin_logout')
 
 def admin_logout():
 
-    session.pop('admin', None)
+    session.pop(
+
+        'admin',
+        None
+
+    )
 
     return redirect('/')
+
 # ================= LOGOUT =================
 
 @app.route('/logout')

@@ -28,37 +28,53 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
     <!-- TOP -->
 
-    <div class="topbar">
+    <div class="progress-top">
 
         <div>
 
-            <h1>
+            <h1 class="progress-heading">
 
                 ADMIN PANEL
 
             </h1>
 
-            <p>
+            <p class="progress-subtitle">
 
-                Secure management dashboard.
+                Manage users and monitor platform activity.
 
             </p>
 
         </div>
 
-        <div class="profile-box">
-
-            <i class="fa-solid fa-user-shield"></i>
-
-            <span>
-
-                ADMIN
-
-            </span>
-
-        </div>
-
     </div>
+
+    <!-- BUTTONS -->
+
+    <a href="/dashboard"
+
+    onclick="window.location.replace('/dashboard')">
+
+        <button class="logout-btn"
+        style="margin-bottom:20px;">
+
+            BACK TO DASHBOARD
+
+        </button>
+
+    </a>
+
+    <a href="/admin_logout"
+
+    onclick="window.location.replace('/')">
+
+        <button class="logout-btn"
+        style="margin-bottom:30px;">
+
+            ADMIN LOGOUT
+
+        </button>
+
+    </a>
 
     <!-- GRID -->
 
@@ -77,20 +93,42 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             <h2>
 
                 REGISTERED USERS
-                <h1 style="font-size:70px; margin-top:20px; color:white;">
 
-    {{ total_users }}
+            </h2>
 
-</h1>
-            {% for user in users %}
+            <h1 style="
+            font-size:65px;
+            margin-top:20px;
+            color:white;
+            ">
 
-                <p>
+                {{ total_users }}
 
-                    {{ user }}
+            </h1>
 
-                </p>
+        </div>
 
-            {% endfor %}
+        <!-- STATUS -->
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fa-solid fa-chart-simple"></i>
+
+            </div>
+
+            <h2>
+
+                SYSTEM STATUS
+
+            </h2>
+
+            <p>
+
+                ACTIVE
+
+            </p>
 
         </div>
 
@@ -106,37 +144,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
             <h2>
 
-                SECURITY STATUS
+                SECURITY
 
             </h2>
 
             <p>
 
-                All user data protected securely.
-
-            </p>
-
-        </div>
-
-        <!-- SYSTEM -->
-
-        <div class="card">
-
-            <div class="icon">
-
-                <i class="fa-solid fa-server"></i>
-
-            </div>
-
-            <h2>
-
-                SERVER STATUS
-
-            </h2>
-
-            <p>
-
-                AI Interview System Running Successfully.
+                SECURED
 
             </p>
 
@@ -144,18 +158,32 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
     </div>
 
-    <br>
+    <!-- USER LIST -->
 
-    <a href="/dashboard">
+    <div class="card"
+    style="margin-top:35px;">
 
-        <button>
+        <h2 style="margin-bottom:25px;">
 
-            BACK TO DASHBOARD
-            
+            USER LIST
 
-        </button>
+        </h2>
 
-    </a>
+        {% for user in users %}
+
+        <p style="
+        margin-bottom:15px;
+        font-size:22px;
+        color:#cbd5e1;
+        ">
+
+            {{ user }}
+
+        </p>
+
+        {% endfor %}
+
+    </div>
 
 </div>
 
