@@ -5,94 +5,108 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Video Interview</title>
+<title>AI Video Interview</title>
 
-<link rel="stylesheet"
-href="{{ url_for('static', filename='style.css') }}">
+<style>
 
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+body{
+    margin:0;
+    background:#020617;
+    color:white;
+    font-family:Arial;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+h1{
+    font-size:55px;
+    margin-bottom:30px;
+
+    background:linear-gradient(
+        90deg,
+        #00f5ff,
+        #9333ea
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+video{
+    width:900px;
+    max-width:95%;
+    border:4px solid #2563eb;
+    border-radius:20px;
+    background:black;
+}
+
+button{
+    margin-top:25px;
+    padding:15px 35px;
+    border:none;
+    border-radius:15px;
+    font-size:20px;
+    cursor:pointer;
+    color:white;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #9333ea
+    );
+}
+
+</style>
 
 </head>
 
 <body>
 
-<div class="interview-container">
+<h1>AI VIDEO INTERVIEW</h1>
 
-    <div class="interview-box">
+<video id="video" autoplay playsinline></video>
 
-        <!-- TOP -->
+<button onclick="startCamera()">
 
-        <div class="interview-top">
+START CAMERA
 
-            <div>
+</button>
 
-                <h1>
+<script>
 
-                    VIDEO INTERVIEW
+async function startCamera(){
 
-                </h1>
+    try{
 
-                <p>
+        const stream = await navigator.mediaDevices.getUserMedia({
 
-                    Smart webcam based interview simulation platform.
+            video:true,
+            audio:false
 
-                </p>
+        });
 
-            </div>
+        const video = document.getElementById("video");
 
-            <div class="hr-badge">
+        video.srcObject = stream;
 
-                BETA
+    }
 
-            </div>
+    catch(error){
 
-        </div>
+        alert("Camera Permission Required");
 
-        <!-- COMING SOON -->
+        console.log(error);
 
-        <div class="feedback-card">
+    }
 
-            <div class="feedback-icon">
+}
 
-                <i class="fa-solid fa-video"></i>
-
-            </div>
-
-            <h2>
-
-                COMING SOON
-
-            </h2>
-
-            <p>
-
-                AI powered live video interview
-                feature is under development.
-
-            </p>
-
-        </div>
-
-        <!-- BUTTON -->
-
-        <a href="/dashboard">
-
-            <button>
-
-                BACK TO DASHBOARD
-
-            </button>
-
-        </a>
-
-    </div>
-
-</div>
+</script>
 
 </body>
 

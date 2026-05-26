@@ -564,15 +564,9 @@ def admin():
 
         password = request.form['password']
 
-        if (
+        if username == "Anand" and password == "Alexa":
 
-            username == "Anand"
-
-            and
-
-            password == "Alexa"
-
-        ):
+            session['admin'] = True
 
             return render_template(
 
@@ -583,22 +577,28 @@ def admin():
 
             )
 
+    if 'admin' in session:
+
+        return render_template(
+
+            'admin.html',
+
+            total_users=total_users,
+            users=users
+
+        )
+
     return render_template(
-
-        'admin.html',
-
-        total_users=total_users
-
+        'login.html'
     )
-
 # ================= ADMIN LOGOUT =================
-
 @app.route('/admin_logout')
 
 def admin_logout():
 
-    return redirect('/')
+    session.pop('admin', None)
 
+    return redirect('/')
 # ================= LOGOUT =================
 
 @app.route('/logout')
