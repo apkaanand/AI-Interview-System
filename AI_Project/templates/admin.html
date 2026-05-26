@@ -77,9 +77,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             <h2>
 
                 REGISTERED USERS
+                <h1 style="font-size:70px; margin-top:20px; color:white;">
 
-            </h2>
+    {{ total_users }}
 
+</h1>
             {% for user in users %}
 
                 <p>
@@ -149,6 +151,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <button>
 
             BACK TO DASHBOARD
+            
 
         </button>
 

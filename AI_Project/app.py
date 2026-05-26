@@ -547,15 +547,22 @@ def resume():
     methods=['GET','POST']
 )
 
+# ================= ADMIN =================
+
+@app.route(
+    '/admin',
+    methods=['GET','POST']
+)
+
 def admin():
+
+    total_users = len(users)
 
     if request.method == 'POST':
 
         username = request.form['username']
 
         password = request.form['password']
-
-        # ADMIN LOGIN
 
         if (
 
@@ -567,40 +574,35 @@ def admin():
 
         ):
 
-            # ALL USERS DATA
-
-            users_list = users
-
             return render_template(
 
                 'admin.html',
 
-                users=users_list
+                total_users=total_users,
+                users=users
 
             )
 
     return render_template(
-        'admin.html'
+
+        'admin.html',
+
+        total_users=total_users
+
     )
+
 # ================= ADMIN LOGOUT =================
-@app.route('/')
-
-def home():
-
-    return render_template(
-        'index.html'
-    )
-
-
 
 @app.route('/admin_logout')
 
 def admin_logout():
 
     return redirect('/')
+
 # ================= LOGOUT =================
 
 @app.route('/logout')
+
 def logout():
 
     session.clear()

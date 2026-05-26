@@ -117,8 +117,8 @@ button:hover{
     width:100%;
     max-width:420px;
     background:#081126;
-    padding:40px;
-    border-radius:35px;
+    padding:35px;
+    border-radius:28px;
     border:1px solid rgba(255,255,255,0.05);
     transition:0.4s;
 }
@@ -129,29 +129,30 @@ button:hover{
 }
 
 .hero-icon{
-    width:90px;
-    height:90px;
+    width:75px;
+    height:75px;
     border-radius:50%;
     background:#111c3b;
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
 .hero-icon i{
-    font-size:38px;
+    font-size:30px;
     color:#38bdf8;
 }
 
 .hero-card h2{
-    font-size:32px;
-    margin-bottom:15px;
+    font-size:28px;
+    margin-bottom:12px;
 }
 
 .hero-card p{
     color:#cbd5e1;
-    line-height:1.7;
+    line-height:1.6;
+    font-size:16px;
 }
 
 /* LOGIN + REGISTER */
@@ -171,7 +172,7 @@ button:hover{
 }
 
 .auth-content h1{
-    font-size:85px;
+    font-size:75px;
     line-height:1.1;
     margin-bottom:30px;
 
@@ -187,7 +188,7 @@ button:hover{
 
 .auth-content p{
     color:#cbd5e1;
-    font-size:22px;
+    font-size:20px;
     line-height:1.8;
     margin-bottom:45px;
 }
@@ -203,17 +204,17 @@ button:hover{
     align-items:center;
     gap:20px;
     background:#081126;
-    padding:22px;
-    border-radius:22px;
+    padding:20px;
+    border-radius:20px;
 }
 
 .feature i{
-    font-size:28px;
+    font-size:24px;
     color:#38bdf8;
 }
 
 .feature span{
-    font-size:20px;
+    font-size:18px;
 }
 
 .auth-right{
@@ -224,9 +225,11 @@ button:hover{
 }
 
 .auth-box,
+
+.auth-box,
 .interview-box{
     width:100%;
-    max-width:900px;
+    max-width:1000px;
     background:#081126;
     padding:55px;
     border-radius:35px;
@@ -235,11 +238,11 @@ button:hover{
 }
 
 .login-top{
-    margin-bottom:35px;
+    margin-bottom:30px;
 }
 
 .login-top h2{
-    font-size:50px;
+    font-size:42px;
     margin-bottom:12px;
 
     background:linear-gradient(
@@ -254,7 +257,7 @@ button:hover{
 
 .login-top p{
     color:#cbd5e1;
-    font-size:18px;
+    font-size:17px;
 }
 
 .input-group{
@@ -263,13 +266,13 @@ button:hover{
     align-items:center;
     gap:18px;
     background:#0f172a;
-    padding:20px;
-    border-radius:20px;
-    margin-bottom:22px;
+    padding:18px;
+    border-radius:18px;
+    margin-bottom:20px;
 }
 
 .input-group i{
-    font-size:22px;
+    font-size:20px;
     color:#38bdf8;
 }
 
@@ -279,14 +282,14 @@ button:hover{
     border:none;
     outline:none;
     color:white;
-    font-size:17px;
+    font-size:16px;
 }
 
 .auth-box button{
     width:100%;
-    padding:20px;
-    border-radius:20px;
-    font-size:18px;
+    padding:18px;
+    border-radius:18px;
+    font-size:17px;
 }
 
 .bottom-link{
@@ -302,23 +305,23 @@ button:hover{
 /* DASHBOARD */
 
 .sidebar{
-    width:270px;
+    width:250px;
     height:100vh;
     background:#040b1d;
     position:fixed;
     left:0;
     top:0;
-    padding:30px;
+    padding:25px;
     border-right:1px solid rgba(255,255,255,0.05);
 }
 
 .logo{
     text-align:center;
-    margin-bottom:60px;
+    margin-bottom:50px;
 }
 
 .logo h2{
-    font-size:36px;
+    font-size:32px;
 
     background:linear-gradient(
         90deg,
@@ -341,15 +344,23 @@ button:hover{
 }
 
 .sidebar ul li{
-    padding:18px;
-    border-radius:18px;
-    margin-bottom:15px;
+    padding:16px;
+    border-radius:16px;
+    margin-bottom:12px;
     transition:0.3s;
     cursor:pointer;
 }
 
 .sidebar ul li:hover{
     background:#111c3b;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:white;
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
 .active{
@@ -361,19 +372,19 @@ button:hover{
 }
 
 .main{
-    margin-left:270px;
-    padding:40px;
+    margin-left:250px;
+    padding:35px;
 }
 
 .topbar{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:45px;
+    margin-bottom:35px;
 }
 
 .topbar h1{
-    font-size:75px;
+    font-size:60px;
 
     background:linear-gradient(
         90deg,
@@ -395,13 +406,13 @@ button:hover{
     align-items:center;
     gap:15px;
     background:#081126;
-    padding:15px 22px;
-    border-radius:18px;
+    padding:14px 20px;
+    border-radius:16px;
     border:1px solid rgba(255,255,255,0.05);
 }
 
 .profile-box i{
-    font-size:22px;
+    font-size:20px;
     color:#38bdf8;
 }
 
@@ -409,17 +420,18 @@ button:hover{
     display:grid;
     grid-template-columns:repeat(
         auto-fit,
-        minmax(320px,1fr)
+        minmax(280px,1fr)
     );
-    gap:30px;
+    gap:25px;
 }
 
 .card{
     background:#081126;
-    padding:40px;
-    border-radius:35px;
+    padding:25px;
+    border-radius:24px;
     border:1px solid rgba(255,255,255,0.05);
     transition:0.4s;
+    min-height:280px;
 }
 
 .card:hover{
@@ -428,163 +440,39 @@ button:hover{
 }
 
 .icon{
-    width:90px;
-    height:90px;
+    width:70px;
+    height:70px;
     border-radius:50%;
     background:#111c3b;
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 
 .icon i{
-    font-size:38px;
+    font-size:28px;
     color:#38bdf8;
 }
 
 .card h2{
-    font-size:36px;
-    margin-bottom:18px;
+    font-size:26px;
+    margin-bottom:15px;
+    line-height:1.2;
 }
 
 .card p{
     color:#cbd5e1;
-    line-height:1.7;
-    margin-bottom:30px;
+    line-height:1.6;
+    margin-bottom:22px;
+    font-size:16px;
 }
 
 .card button{
     width:100%;
-    padding:18px;
-    border-radius:18px;
-}
-
-/* INTERVIEW */
-
-.interview-container{
-    width:100%;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:40px;
-}
-
-.interview-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:35px;
-}
-
-.interview-top h1{
-    font-size:55px;
-
-    background:linear-gradient(
-        90deg,
-        #00f5ff,
-        #9333ea
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.interview-top p{
-    color:#cbd5e1;
-    margin-top:10px;
-}
-
-.hr-badge{
-    padding:15px 25px;
-    border-radius:18px;
-    background:linear-gradient(
-        90deg,
-        #2563eb,
-        #9333ea
-    );
-    font-weight:bold;
-}
-
-.question-card,
-.feedback-card,
-.upload-card{
-    background:#0f172a;
-    padding:35px;
-    border-radius:30px;
-    margin-bottom:30px;
-}
-
-.question-icon,
-.feedback-icon,
-.upload-icon{
-    width:90px;
-    height:90px;
-    border-radius:50%;
-    background:#111c3b;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-bottom:25px;
-}
-
-.question-icon i,
-.feedback-icon i,
-.upload-icon i{
-    font-size:38px;
-    color:#38bdf8;
-}
-
-.question-card h2,
-.feedback-card h2,
-.upload-card h2{
-    font-size:35px;
-    line-height:1.6;
-    margin-bottom:15px;
-}
-
-.option-box{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    background:#0f172a;
-    padding:24px;
-    border-radius:22px;
-    margin-bottom:22px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.option-box:hover{
-    background:#172036;
-    transform:translateX(8px);
-}
-
-.option-box input{
-    transform:scale(1.4);
-}
-
-.option-box span{
-    font-size:22px;
-}
-
-textarea,
-input[type="file"]{
-    width:100%;
-    background:#0f172a;
-    border:none;
-    outline:none;
-    border-radius:22px;
-    padding:25px;
-    color:white;
-    font-size:18px;
-    margin-bottom:25px;
-}
-
-textarea{
-    height:220px;
-    resize:none;
+    padding:14px;
+    border-radius:14px;
+    font-size:15px;
 }
 
 /* RESPONSIVE */
@@ -612,7 +500,7 @@ textarea{
     }
 
     .topbar h1{
-        font-size:45px;
+        font-size:42px;
     }
 
     .hero-content h1,
@@ -628,10 +516,45 @@ textarea{
     .interview-box{
         padding:30px;
     }
+}
+/* ================= MCQ + HR FIX ================= */
 
-    .interview-top{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:20px;
-    }
+.interview-box{
+    max-width:1100px !important;
+    padding:60px !important;
+}
+
+.interview-top h1{
+    font-size:60px !important;
+}
+
+.question-card{
+    padding:40px !important;
+    border-radius:30px !important;
+}
+
+.question-card h2{
+    font-size:38px !important;
+    line-height:1.5 !important;
+    margin-bottom:20px !important;
+}
+
+.option-box{
+    padding:24px !important;
+    border-radius:20px !important;
+}
+
+.option-box span{
+    font-size:22px !important;
+}
+
+textarea{
+    height:220px !important;
+    font-size:18px !important;
+}
+
+.interview-box button{
+    padding:18px 30px !important;
+    font-size:18px !important;
+    border-radius:18px !important;
 }
