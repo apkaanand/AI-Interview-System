@@ -548,6 +548,7 @@ def resume():
 )
 
 # ================= ADMIN =================
+# ================= ADMIN =================
 
 @app.route(
     '/admin',
@@ -577,19 +578,21 @@ def admin():
 
             )
 
-    if 'admin' in session:
+    if 'admin' not in session:
 
         return render_template(
 
-            'admin.html',
-
-            total_users=total_users,
-            users=users
+            'admin_login.html'
 
         )
 
     return render_template(
-        'login.html'
+
+        'admin.html',
+
+        total_users=total_users,
+        users=users
+
     )
 # ================= ADMIN LOGOUT =================
 @app.route('/admin_logout')
